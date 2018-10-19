@@ -21,6 +21,10 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 class Md5Counter{
+    _statusBarItem:vscode.StatusBarItem;
+    constructor(){
+        this._statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
+    }
     updateMd5(){
         // 创建所需的状态栏元素
         if (!this._statusBarItem) {
